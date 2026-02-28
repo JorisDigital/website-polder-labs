@@ -27,3 +27,5 @@ Required GitHub secrets:
 - `REPOSITORY_TOKEN` (GitHub PAT used by the SWA ARM/Bicep resource)
 
 Run it from GitHub: **Actions** → **Provision Azure Infrastructure** → **Run workflow**.
+
+<!-- security-smoke -->
