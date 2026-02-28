@@ -24,8 +24,12 @@ jobs:
         with:
           inlineScript: |
             az bicep install
-            az bicep build --file infra/main.bicep --stdout > /tmp/main.generated.json
+            az bicep build --file infra/main.bicep --stdout > infra/main.generated.json
 
       - name: Compare generated JSON
         run: |
-          diff -u infra/main.json /tmp/main.generated.json
+          diff -u infra/main.json infra/main.generated.json
+
+      - name: Cleanup generated file
+        if: always()
+        run: rm -f infra/main.generated.json
