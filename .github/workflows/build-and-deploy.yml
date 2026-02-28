@@ -13,31 +13,7 @@ permissions:
 
 jobs:
   validate:
-    name: Validate Build (PR)
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
-
-      - name: Setup Node
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
-        with:
-          node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: app/package-lock.json
-
-      - name: Install dependencies
-        working-directory: app
-        run: npm ci
-
-      - name: Build Astro site
-        working-directory: app
-        run: npm run build
-
-  deploy:
-    name: Deploy (main)
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    name: Validate
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -59,6 +35,7 @@ jobs:
         run: npm run build
 
       - name: Upload to Azure Static Web Apps
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: Azure/static-web-apps-deploy@4d27395796ac319302594769cfe812bd207490b1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}

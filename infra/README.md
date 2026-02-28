@@ -1,6 +1,6 @@
 # Infrastructure
 
-Deploy the Azure Static Web App resource:
+Minimal one-time deployment for the Azure Static Web App resource:
 
 ```bash
 az group create -g rg-<project>-prod -l westeurope
@@ -9,24 +9,12 @@ az deployment group create \
   --resource-group rg-<project>-prod \
   --template-file infra/main.bicep \
   --parameters \
-    name='<swa-name>' \
-    repositoryUrl='https://github.com/<user>/<repo>' \
-    repositoryToken='<github-pat>'
+    name='<swa-name>'
 ```
 
 Notes:
-- `repositoryToken` is required by the Static Web App resource when linking a GitHub repository.
-- For scaffolding phase, custom domain is intentionally deferred.
-
-## GitHub Actions Provisioning
-
-A manual provisioning workflow is available at [.github/workflows/provision-infra.yml](../.github/workflows/provision-infra.yml).
-
-Required GitHub secrets:
-- `AZURE_CREDENTIALS` (service principal JSON for `azure/login`)
-- `REPOSITORY_TOKEN` (GitHub PAT used by the SWA ARM/Bicep resource)
-
-Run it from GitHub: **Actions** → **Provision Azure Infrastructure** → **Run workflow**.
+- This template keeps infra intentionally lean: one Static Web App resource.
+- Application deployment is handled by [.github/workflows/build-and-deploy.yml](../.github/workflows/build-and-deploy.yml).
 
 ## Security Baseline
 

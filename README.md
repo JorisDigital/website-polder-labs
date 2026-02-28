@@ -1,12 +1,12 @@
 # website-polder-labs
 
-Astro + Azure Static Web Apps template with Bicep-based infrastructure.
+A lean Astro + Azure Static Web Apps template for a simple, great webpage.
 
 ## Repository structure
 
 - [app](app): Astro frontend
-- [infra](infra): Azure infrastructure definitions
-- [.github/workflows](.github/workflows): CI/CD and provisioning workflows
+- [infra](infra): minimal Azure infrastructure definition
+- [.github/workflows](.github/workflows): build and deploy workflow
 
 ## Local development
 
@@ -20,9 +20,13 @@ Astro + Azure Static Web Apps template with Bicep-based infrastructure.
 
 ## Deployment flow
 
-- Pull requests to `main`: run build validation only.
+- Pull requests to `main`: run build validation.
 - Pushes to `main`: run build + deploy to Azure Static Web Apps.
-- Infrastructure provisioning is manual via [ .github/workflows/provision-infra.yml ](.github/workflows/provision-infra.yml).
+
+## One-time Azure setup
+
+- Create the Static Web App with [infra/main.bicep](infra/main.bicep).
+- Add GitHub secret `AZURE_STATIC_WEB_APPS_API_TOKEN`.
 
 ## Security notes
 
