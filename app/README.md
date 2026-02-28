@@ -1,46 +1,25 @@
-# Astro Starter Kit: Basics
+# App
 
-```sh
-npm create astro@latest -- --template basics
-```
+This folder contains the Astro frontend deployed to Azure Static Web Apps.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Commands
 
-## 🚀 Project Structure
+Run these from the app root.
 
-Inside of your Astro project, you'll see the following folders and files:
+| Command | Purpose |
+| --- | --- |
+| `npm ci` | Install exact dependencies from lockfile |
+| `npm run dev` | Start local Astro dev server |
+| `npm run build` | Build static output to `app/dist` |
+| `npm run preview` | Preview built site locally |
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## Azure Static Web Apps specifics
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+- Custom headers and 404 behavior are configured in [public/staticwebapp.config.json](public/staticwebapp.config.json).
+- Deployment uploads prebuilt artifacts from `app/dist`.
+- Node runtime policy is defined in [package.json](package.json) (`engines.node`).
 
-## 🧞 Commands
+## Pages
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Home: [src/pages/index.astro](src/pages/index.astro)
+- Not found: [src/pages/404.astro](src/pages/404.astro)
