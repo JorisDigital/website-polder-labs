@@ -1,11 +1,11 @@
-# website-polder-labs
+# Polder Labs website
 
-A lean Astro + Azure Static Web Apps template for a simple, great webpage.
+Production repository for the Polder Labs website, built with Astro and deployed to Azure Static Web Apps.
 
 ## Repository structure
 
 - [app](app): Astro frontend
-- [infra](infra): minimal Azure infrastructure definition
+- [infra](infra): Azure infrastructure definition and domain helper script
 - [.github/workflows](.github/workflows): build and deploy workflow
 
 ## Local development
@@ -23,15 +23,22 @@ A lean Astro + Azure Static Web Apps template for a simple, great webpage.
 - Pull requests to `main`: run build validation.
 - Pushes to `main`: run build + deploy to Azure Static Web Apps.
 
-## One-time Azure setup
+## Deployment setup
 
-- Create the Static Web App with [infra/main.bicep](infra/main.bicep).
-- Add GitHub secret `AZURE_STATIC_WEB_APPS_API_TOKEN`.
+- Provision the Static Web App with [infra/main.bicep](infra/main.bicep).
+- Store the deployment token in the GitHub secret `AZURE_STATIC_WEB_APPS_API_TOKEN`.
 
 The infrastructure is intentionally simple for a first production release:
 - one production environment (`prd`)
 - Azure tagging and parameter validation
 - default `Free` SKU for low traffic, with an easy upgrade path to `Standard`
+
+## Live domains
+
+- [https://www.polder-labs.nl](https://www.polder-labs.nl)
+- [https://polder-labs.nl](https://polder-labs.nl) once apex-domain validation finishes
+
+Domain details and Azure resource information are documented in [infra/README.md](infra/README.md).
 
 ## Security notes
 
