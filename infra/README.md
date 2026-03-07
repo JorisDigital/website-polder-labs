@@ -1,6 +1,6 @@
 # Infrastructure
 
-Lean one-time deployment for the production Azure Static Web App resource.
+Lean production infrastructure for the Polder Labs Azure Static Web App.
 
 ```bash
 az group create -g rg-<project>-prod -l westeurope
@@ -19,12 +19,49 @@ Notes:
 - Default SKU is `Free`, which fits a low-traffic first release. Move to `Standard` later if you need higher limits or more advanced features.
 - Application deployment is handled by [.github/workflows/build-and-deploy.yml](../.github/workflows/build-and-deploy.yml).
 
+## Current production resource
+
+- Resource group: `rg-website-polder-labs-prd`
+- Static Web App: `website-polder-labs-prd-260307`
+- Default hostname: `witty-mud-06fe47a03.2.azurestaticapps.net`
+- Live `www` domain: `www.polder-labs.nl`
+
 ## Parameters
 
 - `name`: globally unique Static Web App name
 - `environment`: fixed to `prd`
 - `skuName`: `Free` by default, optional `Standard`
 - `tags`: optional extra Azure tags
+
+## Custom domains
+
+Current setup:
+
+- `www.polder-labs.nl`: bound in Azure Static Web Apps
+- `polder-labs.nl`: apex domain validation in progress or managed via DNS mapping
+
+For `www.polder-labs.nl`:
+
+1. At your DNS provider, create a `CNAME` record:
+  - Host: `www`
+  - Value: `witty-mud-06fe47a03.2.azurestaticapps.net`
+
+2. Wait until DNS resolves.
+
+3. Bind the domain in Azure by running:
+
+```powershell
+.\infra\set-custom-domain.ps1
+```
+
+This script uses:
+- resource group `rg-website-polder-labs-prd`
+- Static Web App `website-polder-labs-prd-260307`
+- hostname `www.polder-labs.nl`
+
+Optional root-domain behavior:
+- redirect `polder-labs.nl` to `https://www.polder-labs.nl` at your DNS/registrar provider
+- keep `www` as the primary production hostname
 
 ## Security Baseline
 
