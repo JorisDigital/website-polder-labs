@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 210">
+  <!-- Polder Labs Icon — Light -->
+  <!-- Grid: T=52 G=14 | All thicknesses=52 | All gaps=14 -->
+  <!-- Ink: #262C38 | Secondary Green: #567C57 | Primary Green: #2F5D46 -->
+
+  <!-- Col A: Left tall bar (ink) -->
+  <rect x="0" y="0" width="52" height="122" fill="#262C38"/>
+  <!-- Col A: Left bottom block (ink) -->
+  <rect x="0" y="136" width="52" height="74" fill="#262C38"/>
+  <!-- Col B: Center top square (ink) -->
+  <rect x="66" y="0" width="52" height="56" fill="#262C38"/>
+  <!-- Col B–C: Center L-shape (ink) -->
+  <path d="M66 70H170V122H118V210H66Z" fill="#262C38"/>
+  <!-- Col C: Right L-shape (secondary green) -->
+  <path d="M132 0H236V122H184V56H132Z" fill="#567C57"/>
+  <!-- Col C: Right bottom block (primary green) -->
+  <rect x="132" y="136" width="104" height="74" fill="#2F5D46"/>
+</svg>

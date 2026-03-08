@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 500">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Polder Labs — LinkedIn / Twitter Banner (1500×500) -->
+  <rect width="1500" height="500" fill="#FFFFFF"/>
+
+  <!-- Subtle bottom accent -->
+  <rect x="0" y="490" width="1500" height="10" fill="#2F5D46"/>
+
+  <!-- Logo lockup — left-aligned with comfortable padding -->
+  <g transform="translate(120, 120)">
+    <!-- Icon (scaled to fit 260px height area) -->
+    <g transform="scale(0.95)">
+      <rect x="0" y="0" width="52" height="122" fill="#262C38"/>
+      <rect x="0" y="136" width="52" height="74" fill="#262C38"/>
+      <rect x="66" y="0" width="52" height="56" fill="#262C38"/>
+      <path d="M66 70H170V122H118V210H66Z" fill="#262C38"/>
+      <path d="M132 0H236V122H184V56H132Z" fill="#567C57"/>
+      <rect x="132" y="136" width="104" height="74" fill="#2F5D46"/>
+    </g>
+
+    <!-- Wordmark -->
+    <text x="290" y="108"
+          font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
+          font-weight="500"
+          font-size="96"
+          fill="#262C38"
+          letter-spacing="-0.01em">Polder Labs</text>
+
+    <!-- Tagline -->
+    <text x="292" y="175"
+          font-family="'Inter', 'Helvetica Neue', Arial, sans-serif"
+          font-weight="400"
+          font-size="32"
+          fill="#6B7280"
+          letter-spacing="0.086em">BUILT FOR GROWTH</text>
+  </g>
+</svg>

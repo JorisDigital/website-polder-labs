@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <!-- Polder Labs Favicon — 16×16 pixel-hinted -->
+  <!-- Ultra-simplified: 2 blocks to retain brand recognition at 16px -->
+  <rect width="16" height="16" rx="3" fill="#262C38"/>
+  <rect x="3" y="3" width="4" height="6" fill="#FFFFFF"/>
+  <rect x="3" y="10" width="4" height="3" fill="#FFFFFF"/>
+  <rect x="8" y="3" width="5" height="4" fill="#567C57"/>
+  <rect x="8" y="8" width="5" height="5" fill="#2F5D46"/>
+</svg>

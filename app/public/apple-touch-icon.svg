@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+  <!-- Polder Labs — Apple Touch Icon (180×180) -->
+  <!-- iOS requires no rounded corners (system applies mask) -->
+  <rect width="180" height="180" fill="#262C38"/>
+  <g transform="translate(24, 31) scale(0.56)">
+    <rect x="0" y="0" width="52" height="122" fill="#FFFFFF"/>
+    <rect x="0" y="136" width="52" height="74" fill="#FFFFFF"/>
+    <rect x="66" y="0" width="52" height="56" fill="#FFFFFF"/>
+    <path d="M66 70H170V122H118V210H66Z" fill="#FFFFFF"/>
+    <path d="M132 0H236V122H184V56H132Z" fill="#567C57"/>
+    <rect x="132" y="136" width="104" height="74" fill="#2F5D46"/>
+  </g>
+</svg>

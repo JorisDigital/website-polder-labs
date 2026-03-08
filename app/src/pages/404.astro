@@ -1,11 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Base from '../layouts/Base.astro';
+import '../styles/global.css';
 ---
 
-<Layout>
-	<main>
-		<h1>Page not found</h1>
-		<p>The page you requested does not exist.</p>
-		<p><a href="/">Return home</a></p>
-	</main>
-</Layout>
+<Base title="Pagina niet gevonden | Polder Labs" description="De opgevraagde pagina bestaat niet.">
+	<section class="section">
+		<div class="container" style="text-align: center;">
+			<h1>Pagina niet gevonden</h1>
+			<p style="margin: var(--space-3) auto 0; color: var(--color-text-secondary);">
+				De pagina die u zoekt bestaat niet of is verplaatst.
+			</p>
+			<div style="margin-top: var(--space-4); display: flex; justify-content: center;">
+				<a href="/" class="btn btn--primary">Terug naar home</a>
+			</div>
+		</div>
+	</section>
+</Base>

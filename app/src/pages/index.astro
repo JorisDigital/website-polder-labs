@@ -1,33 +1,344 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Base from '../layouts/Base.astro';
+import '../styles/global.css';
 ---
 
-<Layout>
-	<main>
-		<h1>Polder Labs</h1>
-		<p>The website is live and running on Azure Static Web Apps.</p>
-		<p>Content and branding are being prepared for the first public version.</p>
-	</main>
-</Layout>
+<Base>
 
-<style>
-	main {
-		min-height: 100vh;
-		display: grid;
-		place-content: center;
-		gap: 0.75rem;
-		padding: 2rem;
-		text-align: center;
-	}
+  <!-- ============================================================
+       HEADER / NAV
+       ============================================================ -->
+  <header class="container" style="padding-block: var(--space-3); display: flex; align-items: center; justify-content: space-between;">
+    <a href="/" aria-label="Polder Labs — home">
+      <img
+        src="/polder-labs-logo.svg"
+        alt="Polder Labs — Built for growth."
+        height="40"
+        width="177"
+      />
+    </a>
+    <nav>
+      <a href="#contact" class="btn btn--primary">Contact</a>
+    </nav>
+  </header>
 
-	h1 {
-		margin: 0;
-		font-size: clamp(2.5rem, 6vw, 4rem);
-	}
+  <!-- ============================================================
+       1. HERO
+       ============================================================ -->
+  <section class="section hero" style="padding-top: var(--space-8);">
+    <div class="hero__bg" aria-hidden="true">
+	  <img src="/images/blocks.webp" alt="" loading="eager" fetchpriority="high" decoding="async" width="1536" height="1024" />
+    </div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <h1>Automatiseer wat vandaag nog handmatig gebeurt.</h1>
+      <p style="margin-top: var(--space-3); font-size: var(--text-h3); color: var(--color-text-secondary); max-width: var(--measure);">
+        Uw organisatie draait op processen. Maar te veel daarvan kosten dagelijks onnodig tijd, capaciteit en aandacht.
+      </p>
+      <p style="margin-top: var(--space-2); max-width: var(--measure);">
+        Polder Labs analyseert hoe uw werk écht verloopt en bouwt slimme workflows die terugkerende handelingen automatisch uitvoeren — betrouwbaar, veilig en volledig geïntegreerd in uw bestaande systemen.
+      </p>
+      <p style="margin-top: var(--space-2); max-width: var(--measure);">
+        Kortere doorlooptijden. Meer voorspelbare processen. Binnen enkele weken zichtbaar resultaat.
+      </p>
+      <div style="display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-4);">
+        <a href="#contact" class="btn btn--primary">Plan een gratis intake</a>
+        <a href="#wat-wij-doen" class="btn btn--secondary">Bekijk wat wij doen</a>
+      </div>
+    </div>
+  </section>
 
-	p {
-		margin: 0;
-		font-size: 1.05rem;
-		color: #cbd5e1;
-	}
-</style>
+  <!-- ============================================================
+       2. TRUST BAR
+       ============================================================ -->
+  <div class="container">
+    <div class="trust-bar">
+      <span class="trust-bar__item">Senior experts</span>
+      <span class="trust-bar__item">MSP &amp; enterprise ervaring</span>
+      <span class="trust-bar__item">Microsoft ecosystem kennis</span>
+      <span class="trust-bar__item">Veilig &amp; schaalbaar</span>
+      <span class="trust-bar__item">Meetbare resultaten</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       3. HERKENBARE SITUATIES
+       ============================================================ -->
+  <section class="section" id="herkenbaar">
+    <div class="container split split--reverse">
+      <div class="split__content">
+        <h2>Herkent u dit?</h2>
+        <ul class="check-list" style="margin-top: var(--space-4);">
+          <li>Medewerkers besteden uren aan e-mails verwerken en doorzetten</li>
+          <li>Gegevens worden handmatig ingevoerd in meerdere systemen</li>
+          <li>Processen zijn afhankelijk van specifieke personen</li>
+          <li>Rapportages kosten onnodig veel tijd</li>
+          <li>Fouten ontstaan door handmatige stappen</li>
+          <li>Capaciteit groeit niet mee met de vraag</li>
+        </ul>
+        <p style="margin-top: var(--space-4); font-weight: 600;">
+          Dit zijn geen incidenten. Dit zijn structurele procesknelpunten.
+        </p>
+        <p style="color: var(--color-text-secondary);">
+          En die zijn op te lossen.
+        </p>
+      </div>
+      <div class="split__media reveal">
+	    <img src="/images/polder_licht.webp" alt="Nederlands polderlandschap" class="img-styled" loading="lazy" decoding="async" width="1536" height="1024" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4. WAT WIJ DOEN
+       ============================================================ -->
+  <section class="section" id="wat-wij-doen" style="background-color: #F8F9FA;">
+    <div class="container split">
+      <div class="split__content">
+        <h2>Wij automatiseren terugkerend werk.</h2>
+        <p style="margin-top: var(--space-2); color: var(--color-text-secondary); max-width: var(--measure);">
+          Wij brengen uw processen in kaart en zetten handmatige stappen om in betrouwbare workflows die automatisch uitvoeren wat nu nog tijd kost.
+        </p>
+        <ul class="check-list" style="margin-top: var(--space-4);">
+          <li>Automatische verwerking van e-mails en aanvragen</li>
+          <li>Document- en gegevensverwerking zonder handmatige invoer</li>
+          <li>Service- en supportprocessen die zichzelf organiseren</li>
+          <li>Rapportages die automatisch worden samengesteld</li>
+          <li>Integraties tussen bestaande systemen</li>
+          <li>Workflows die fouten voorkomen en consistent werken</li>
+        </ul>
+        <p style="margin-top: var(--space-4); font-weight: 600;">
+          Geen nieuwe complexiteit. Wel minder werk.
+        </p>
+      </div>
+      <div class="split__media reveal">
+	    <img src="/images/data_cubes.webp" alt="Data en automatisering visualisatie" class="img-styled" loading="lazy" decoding="async" width="1536" height="1024" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PANORAMIC DIVIDER
+       ============================================================ -->
+  <div class="panoramic-divider" aria-hidden="true">
+	<img src="/images/polders.webp" alt="" loading="lazy" decoding="async" width="1536" height="1024" />
+  </div>
+
+  <!-- ============================================================
+       5. CONCRETE RESULTATEN
+       ============================================================ -->
+  <section class="section section--bg-image" id="resultaten">
+    <div class="section__bg-image" aria-hidden="true">
+	  <img src="/images/windmills_color.webp" alt="" loading="lazy" decoding="async" width="1536" height="1024" />
+    </div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <h2>Wat levert automatisering op?</h2>
+      <ul class="check-list" style="margin-top: var(--space-4);">
+        <li>Minder operationele druk</li>
+        <li>Betere kwaliteit en minder fouten</li>
+        <li>Snellere doorlooptijden</li>
+        <li>Meer voorspelbare processen</li>
+        <li>Meer capaciteit zonder extra personeel</li>
+        <li>Meer tijd voor waardevol werk</li>
+      </ul>
+      <p style="margin-top: var(--space-4); max-width: var(--measure);">
+        Wij optimaliseren niet alleen technologie — wij verbeteren hoe uw organisatie structureel werkt.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. HOE WIJ WERKEN
+       ============================================================ -->
+  <section class="section" id="werkwijze" style="background-color: #F8F9FA;">
+    <div class="container">
+      <div class="split split--reverse" style="align-items: start;">
+        <div class="split__content">
+          <h2>Een gestructureerde en pragmatische aanpak</h2>
+          <div class="steps steps--stacked" style="margin-top: var(--space-6);">
+            <div class="step">
+              <div class="step__number">1</div>
+              <h3>Analyse</h3>
+              <p>We onderzoeken hoe uw processen daadwerkelijk verlopen en waar tijd verloren gaat.</p>
+            </div>
+            <div class="step">
+              <div class="step__number">2</div>
+              <h3>Pilot</h3>
+              <p>We automatiseren één proces zodat u snel resultaat ziet.</p>
+            </div>
+            <div class="step">
+              <div class="step__number">3</div>
+              <h3>Implementatie</h3>
+              <p>We integreren de oplossing veilig binnen uw bestaande omgeving.</p>
+            </div>
+            <div class="step">
+              <div class="step__number">4</div>
+              <h3>Optimalisatie</h3>
+              <p>We meten, verbeteren en zorgen voor continue werking.</p>
+            </div>
+          </div>
+          <p style="margin-top: var(--space-4); font-weight: 600;">
+            Altijd overzichtelijk. Altijd beheersbaar.
+          </p>
+        </div>
+        <div class="split__media split__media--sticky reveal">
+	      <img src="/images/drone.webp" alt="Overzicht vanuit de lucht" class="img-styled" loading="lazy" decoding="async" width="1536" height="1024" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7. WAAROM POLDER LABS
+       ============================================================ -->
+  <section class="section section--bg-image" id="waarom">
+    <div class="section__bg-image section__bg-image--bottom" aria-hidden="true">
+	  <img src="/images/flower_fields.webp" alt="" loading="lazy" decoding="async" width="1536" height="1024" />
+    </div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <h2>Senior expertise. Praktische oplossingen.</h2>
+      <p style="margin-top: var(--space-2); max-width: var(--measure);">
+        Polder Labs bestaat uit twee senior specialisten met ervaring in complexe IT-omgevingen, bedrijfsprocessen en enterprise data-oplossingen.
+      </p>
+      <p style="margin-top: var(--space-3); font-weight: 600;">Wij combineren:</p>
+      <ul class="check-list" style="margin-top: var(--space-2);">
+        <li>Jarenlange ervaring binnen MSP en MKB organisaties</li>
+        <li>Diepgaande kennis van bedrijfsprocessen</li>
+        <li>Enterprise data en automatisering expertise</li>
+        <li>Focus op betrouwbaarheid en continuïteit</li>
+      </ul>
+      <p style="margin-top: var(--space-4); font-weight: 600;">
+        Bewezen oplossingen. Geen experimenten.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8. VOOR WIE WIJ WERKEN
+       ============================================================ -->
+  <section class="section" style="background-color: #F8F9FA;">
+    <div class="container split">
+      <div class="split__content">
+        <h2>Voor wie wij werken</h2>
+        <p style="margin-top: var(--space-2); color: var(--color-text-secondary); max-width: var(--measure);">
+          Wij helpen organisaties waar processen een centrale rol spelen:
+        </p>
+        <ul class="check-list" style="margin-top: var(--space-4);">
+          <li>MKB organisaties met operationele workflows</li>
+          <li>IT en service organisaties</li>
+          <li>Managed Service Providers</li>
+          <li>Logistieke en servicegerichte bedrijven</li>
+        </ul>
+        <p style="margin-top: var(--space-3); color: var(--color-text-secondary); max-width: var(--measure);">
+          Organisaties die willen groeien zonder extra complexiteit.
+        </p>
+      </div>
+      <div class="split__media reveal">
+	    <img src="/images/greenhouses_night.webp" alt="High-tech kassen bij nacht" class="img-styled" loading="lazy" decoding="async" width="1536" height="1024" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       9. VEELGESTELDE VRAGEN
+       ============================================================ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <h2>Veelgestelde vragen</h2>
+      <div class="faq-list" style="margin-top: var(--space-4);">
+
+        <details class="faq-item">
+          <summary>Hoe snel zien we resultaat?</summary>
+          <div class="faq-item__body">
+            Vaak binnen enkele weken na de eerste analyse.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Moeten we nieuwe systemen aanschaffen?</summary>
+          <div class="faq-item__body">
+            Nee. We werken primair met uw bestaande omgeving.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is dit een groot IT-project?</summary>
+          <div class="faq-item__body">
+            Nee. We starten klein en leveren stap voor stap resultaat.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Hoe complex is het beheer?</summary>
+          <div class="faq-item__body">
+            Oplossingen worden zo ontworpen dat ze eenvoudig te beheren zijn.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wat als onze processen veranderen?</summary>
+          <div class="faq-item__body">
+            Workflows worden flexibel ingericht en kunnen worden aangepast.
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       10. EIND-CTA
+       ============================================================ -->
+  <section class="section section--dark section--cta" id="contact">
+    <div class="section__bg-image section__bg-image--dark" aria-hidden="true">
+	  <img src="/images/polders_green_blue.webp" alt="" loading="lazy" decoding="async" width="1536" height="1024" />
+    </div>
+    <div class="container" style="text-align: center; position: relative; z-index: 1;">
+      <h2>Ontdek waar uw organisatie tijd verliest.</h2>
+      <p style="margin-top: var(--space-2); margin-inline: auto;">
+        Wij bekijken samen één proces waar direct winst te behalen is.
+      </p>
+      <p style="margin-top: var(--space-1); margin-inline: auto;">
+        Vrijblijvend. Praktisch. Concreet.
+      </p>
+      <div style="margin-top: var(--space-4);">
+        <a href="mailto:info@polderlabs.com" class="btn btn--primary">Plan een gratis intake</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GRASS STRIP
+       ============================================================ -->
+  <div class="grass-strip" aria-hidden="true">
+	<img src="/images/grass.webp" alt="" loading="lazy" decoding="async" width="1536" height="1024" />
+  </div>
+
+  <!-- ============================================================
+       11. FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <img
+            src="/polder-labs-icon.svg"
+            alt="Polder Labs"
+            height="32"
+            width="36"
+          />
+          <p class="footer__tagline">Built for growth.</p>
+        </div>
+        <div class="footer__links">
+          <a href="mailto:info@polderlabs.com">info@polderlabs.com</a>
+          <a href="tel:+31000000000">+31 (0) 00 000 0000</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        &copy; {new Date().getFullYear()} Polder Labs. Alle rechten voorbehouden.
+      </div>
+    </div>
+  </footer>
+
+</Base>
+
+<script is:inline src="/scripts/reveal.js"></script>

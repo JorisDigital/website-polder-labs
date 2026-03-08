@@ -2,6 +2,12 @@
 
 This folder contains the Astro frontend deployed to Azure Static Web Apps.
 
+## Public asset structure
+
+- Runtime site assets live in `public/`.
+- Downloadable brand collateral and copy-paste snippets live in `public/assets/`.
+- Avoid duplicating the same logo/icon files in both places; `public/` is the canonical source for files used by the website itself.
+
 ## Commands
 
 Run these from the app root.
